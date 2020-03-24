@@ -83,12 +83,15 @@ def print_experimental_design_matrix():
         mx3 = sum(x3) / 4
 
         my = (line1_y_average + line2_y_average + line3_y_average + line4_y_average) / 4
+        
+        # Коефіцієнти a1,a2,a3,a11,a22,a33,a12,a13,a23 є проміжними позначеннями при знаходженні коефіцієнтів рівняння регресії
+        # та вводяться для того аби спростити вигляд системи рівнянь
 
-        a1 = (x1[0] * line1_y_average + x1[1] * line2_y_average + x1[2] * line3_y_average + x1[3] * line4_y_average) / 4
+        a1 = (x1[0] * line1_y_average + x1[1] * line2_y_average + x1[2] * line3_y_average + x1[3] * line4_y_average) / 4        
         a2 = (x2[0] * line1_y_average + x2[1] * line2_y_average + x2[2] * line3_y_average + x2[3] * line4_y_average) / 4
         a3 = (x3[0] * line1_y_average + x3[1] * line2_y_average + x3[2] * line3_y_average + x3[3] * line4_y_average) / 4
 
-        a11 = (x1[0] * x1[0] + x1[1] * x1[1] + x1[2] * x1[2] + x1[3] * x1[3]) / 4
+        a11 = (x1[0] * x1[0] + x1[1] * x1[1] + x1[2] * x1[2] + x1[3] * x1[3]) / 4           
         a22 = (x2[0] * x2[0] + x2[1] * x2[1] + x2[2] * x2[2] + x2[3] * x2[3]) / 4
         a33 = (x3[0] * x3[0] + x3[1] * x3[1] + x3[2] * x3[2] + x3[3] * x3[3]) / 4
         a12 = _a21 = (x1[0] * x2[0] + x1[1] * x2[1] + x1[2] * x2[2] + x1[3] * x2[3]) / 4
